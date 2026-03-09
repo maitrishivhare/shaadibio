@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+/* ── Variables ── */
+:root {
+  --mg-deep:    #1B0A2E;
+  --mg-purple:  #2D1554;
+  --mg-gold:    #C9A84C;
+  --mg-gold2:   #FFD700;
+  --mg-cream:   #FDF6E3;
+  --mg-text:    #1B0A2E;
+  --mg-mid:     #5C4A7A;
+  --mg-border:  #C9A84C44;
+  --font-head:  'Cinzel Decorative', serif;
+  --font-body:  'Cormorant Garamond', serif;
+}
+
+/* ── Page ── */
+.mg-page {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at top, #2D1554 0%, #0D0418 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 16px;
+  font-family: var(--font-body);
+}
+
+/* ── Card ── */
+.mg-card {
+  width: 100%;
+  max-width: 500px;
+  background: var(--mg-cream);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 2px var(--mg-gold),
+    0 0 0 6px #1B0A2E,
+    0 0 0 8px var(--mg-gold),
+    0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* ── Arch SVG ── */
+.mg-arch-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.mg-arch-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Arch Overlaid Content ── */
+.mg-arch-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+/* ── Photo Ring ── */
+.mg-photo-ring {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 3px solid var(--mg-gold);
+  box-shadow:
+    0 0 0 3px #1B0A2E,
+    0 0 0 5px var(--mg-gold);
+  overflow: hidden;
+  background: var(--mg-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.mg-photo-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mg-photo-placeholder {
+  font-size: 26px;
+  color: var(--mg-gold);
+}
+
+/* ── Name & Subtitle ── */
+.mg-name {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--mg-gold);
+  margin: 0 0 4px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.mg-subtitle {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+  text-align: center;
+  font-style: italic;
+}
+
+/* ── Divider ── */
+.mg-divider {
+  background: var(--mg-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 0;
+  font-family: var(--font-head);
+  font-size: 10px;
+  color: var(--mg-gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-top: 1px solid var(--mg-gold);
+  border-bottom: 1px solid var(--mg-gold);
+}
+
+/* ── Body ── */
+.mg-body {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--mg-cream);
+}
+
+/* ── Section ── */
+.mg-section {
+  border: 1px solid var(--mg-border);
+  border-radius: 4px;
+  padding: 14px 16px;
+  background: #FFFEF7;
+  position: relative;
+}
+
+.mg-section::before {
+  content: '✦';
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFFEF7;
+  color: var(--mg-gold);
+  padding: 0 8px;
+  font-size: 12px;
+}
+
+/* ── Section Title ── */
+.mg-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.mg-section-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--mg-gold));
+}
+
+.mg-section-title:last-child .mg-section-line {
+  background: linear-gradient(to left, transparent, var(--mg-gold));
+}
+
+.mg-section-text {
+  font-family: var(--font-head);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--mg-deep);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+/* ── Row ── */
+.mg-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #C9A84C33;
+}
+
+.mg-row:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.mg-row__label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--mg-mid);
+  width: 145px;
+  min-width: 145px;
+}
+
+.mg-row__dot {
+  color: var(--mg-gold);
+  font-size: 8px;
+  flex-shrink: 0;
+}
+
+.mg-row__value {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--mg-text);
+  font-weight: 500;
+  flex: 1;
+}
+
+/* ── Footer ── */
+.mg-footer {
+  background: var(--mg-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px 0;
+  color: var(--mg-gold);
+  font-size: 14px;
+  border-top: 1px solid var(--mg-gold);
+}
+
+/* ── Edit Button ── */
+.mg-edit-btn {
+  margin-top: 20px;
+  padding: 12px 36px;
+  background: linear-gradient(135deg, var(--mg-gold) 0%, #FFD700 100%);
+  color: var(--mg-deep);
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mg-edit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(201,168,76,0.55);
+}
+
+/* ── Modal ── */
+.mg-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+.mg-modal-box {
+  background: var(--mg-cream);
+  border-radius: 8px;
+  border: 2px solid var(--mg-gold);
+  padding: 24px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.mg-modal-title {
+  font-family: var(--font-head);
+  color: var(--mg-deep);
+  margin-top: 0;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* ── Form Fields ── */
+.mg-form-field {
+  margin-bottom: 12px;
+}
+
+.mg-form-field label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--mg-mid);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.mg-form-field input:not([type="file"]) {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--mg-border);
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  box-sizing: border-box;
+  color: var(--mg-text);
+  outline: none;
+  background: #FFFEF7;
+  transition: border-color 0.2s;
+}
+
+.mg-form-field input:not([type="file"]):focus {
+  border-color: var(--mg-gold);
+}
+
+/* ── Modal Buttons ── */
+.mg-modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.mg-btn-save {
+  flex: 1;
+  padding: 11px;
+  background: linear-gradient(135deg, var(--mg-gold), #FFD700);
+  color: var(--mg-deep);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.mg-btn-save:hover {
+  opacity: 0.9;
+}
+
+.mg-btn-cancel {
+  flex: 1;
+  padding: 11px;
+  background: #FFFEF7;
+  color: var(--mg-deep);
+  border: 1.5px solid var(--mg-border);
+  border-radius: 8px;
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mg-btn-cancel:hover {
+  background: var(--mg-border);
+}
+.mg-page { --mg-color: #C9A84C; }
+.mg-section-title { color: var(--mg-color); }
+.mg-section-line { background: var(--mg-color); }
+.mg-row__dot { color: var(--mg-color); }
+.mg-divider { border-color: var(--mg-color); }

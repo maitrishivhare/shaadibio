@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Modern Template Variables ── */
+:root {
+  --primary:      #E91E8C;
+  --primary-dark: #C2185B;
+  --primary-soft: #FCE4EC;
+  --accent:       #FF6B6B;
+  --dark:         #1A1A2E;
+  --mid:          #4A4A6A;
+  --light:        #F8F9FF;
+  --white:        #FFFFFF;
+  --border:       #EEF0FF;
+  --shadow:       0 8px 32px rgba(233, 30, 140, 0.12);
+  --font-head:    'Plus Jakarta Sans', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+}
+
+/* ── Page ── */
+.m-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea22 0%, #f093fb22 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 16px;
+  font-family: var(--font-body);
+}
+
+/* ── Card ── */
+.m-card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--white);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+/* ── Header Banner ── */
+.m-header {
+  background: linear-gradient(135deg, #1A1A2E 0%, #E91E8C 100%);
+  padding: 28px 24px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.m-header::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+}
+
+.m-header::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: 30%;
+  width: 100px;
+  height: 100px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+
+/* ── Photo ── */
+.m-header-photo {
+  width: 90px;
+  height: 90px;
+  min-width: 90px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.5);
+  overflow: hidden;
+  background: rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.m-header-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.m-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+/* ── Header Info ── */
+.m-header-info {
+  flex: 1;
+  z-index: 1;
+}
+
+.m-name {
+  font-family: var(--font-head);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--white);
+  margin: 0 0 4px;
+  letter-spacing: -0.3px;
+}
+
+.m-tagline {
+  font-size: 12px;
+  color: rgba(255,255,255,0.75);
+  margin: 0 0 10px;
+  font-weight: 400;
+}
+
+.m-header-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.m-badge {
+  background: rgba(255,255,255,0.18);
+  color: var(--white);
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.25);
+  font-family: var(--font-head);
+  letter-spacing: 0.3px;
+}
+
+/* ── Body ── */
+.m-body {
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ── Section ── */
+.m-section {
+  background: var(--light);
+  border-radius: 16px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  margin-bottom: 10px;
+}
+
+/* ── Section Title ── */
+.m-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary-soft);
+}
+
+.m-section-icon {
+  font-size: 16px;
+  background: var(--primary-soft);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.m-section-text {
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── Grid ── */
+.m-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+}
+
+/* ── Row ── */
+.m-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.m-row__label {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-family: var(--font-head);
+}
+
+.m-row__value {
+  font-size: 13px;
+  color: var(--dark);
+  font-weight: 500;
+  font-family: var(--font-body);
+}
+
+/* ── Edit Button ── */
+.m-edit-btn {
+  margin-top: 20px;
+  padding: 12px 36px;
+  background: linear-gradient(135deg, #1A1A2E, #E91E8C);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(233,30,140,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.m-edit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(233,30,140,0.45);
+}
+
+/* ── Modal ── */
+.m-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+.m-modal-box {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.m-modal-title {
+  font-family: var(--font-head);
+  color: var(--dark);
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+/* ── Form Fields ── */
+.m-form-field {
+  margin-bottom: 12px;
+}
+
+.m-form-field label {
+  display: block;
+  font-family: var(--font-head);
+  font-weight: 600;
+  color: var(--mid);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.m-form-field input:not([type="file"]) {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  box-sizing: border-box;
+  color: var(--dark);
+  outline: none;
+  transition: border-color 0.2s;
+  background: var(--light);
+}
+
+.m-form-field input:not([type="file"]):focus {
+  border-color: var(--primary);
+  background: var(--white);
+}
+
+/* ── Modal Buttons ── */
+.m-modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.m-btn-save {
+  flex: 1;
+  padding: 11px;
+  background: linear-gradient(135deg, #1A1A2E, #E91E8C);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.m-btn-save:hover {
+  opacity: 0.9;
+}
+
+.m-btn-cancel {
+  flex: 1;
+  padding: 11px;
+  background: var(--light);
+  color: var(--dark);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.m-btn-cancel:hover {
+  background: var(--border);
+}
+.m-page { --m-color: #E91E8C; }
+.m-header { background: linear-gradient(135deg, #1A1A2E, var(--m-color)); }
+.m-section-title { color: var(--m-color); border-bottom: 2px solid var(--m-color); }
+.m-badge { background: var(--m-color); }
