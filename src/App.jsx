@@ -8,15 +8,10 @@ function App() {
   return (
     <BrowserRouter basename="/shaadibio">
       <Routes>
-
-        <Route path="/" element={<Home />} />
-
-        <Route path="/login" element={<Login />} />
-
-        <Route path="/register" element={<Register />} />
-
-        <Route path="/dashboard" element={<Dashboard />} />
-
+        <Route index element={<Home />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        <Route path="dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );
